@@ -530,6 +530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1787859133}
   - component: {fileID: 1787859134}
+  - component: {fileID: 1787859135}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -568,3 +569,15 @@ MonoBehaviour:
   - {fileID: 1600918036692016, guid: c677a79300e7051459476cd03d1eec06, type: 2}
   - {fileID: 1103620330344042, guid: 00d309869f886b946a58c40e684c49b0, type: 2}
   Spawn_Delay: 2
+--- !u!114 &1787859135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1787859132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de3f40102f5749c498926bfa63e5f8b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Move_Speed: 0
