@@ -530,7 +530,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1787859133}
   - component: {fileID: 1787859134}
-  - component: {fileID: 1787859135}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -563,21 +562,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prefap_PreBuild:
-  - {fileID: 1045615516685844, guid: 8e8ea075af9243148926da61cf14af44, type: 2}
-  - {fileID: 1105927355409692, guid: f5bdd2fe9ac847642b85d9ef4cc8f621, type: 2}
-  - {fileID: 1363600292758034, guid: 6f6f2f14afd7d194e8a0998d4b622c68, type: 2}
-  - {fileID: 1600918036692016, guid: c677a79300e7051459476cd03d1eec06, type: 2}
-  - {fileID: 1103620330344042, guid: 00d309869f886b946a58c40e684c49b0, type: 2}
+  - {fileID: 1167122003294796, guid: 6d273008087272a4995b951d2bc19d02, type: 2}
+  - {fileID: 1082403146181480, guid: f5bdd2fe9ac847642b85d9ef4cc8f621, type: 2}
+  - {fileID: 1906106446121054, guid: 6f6f2f14afd7d194e8a0998d4b622c68, type: 2}
+  - {fileID: 1341038315096568, guid: c677a79300e7051459476cd03d1eec06, type: 2}
+  - {fileID: 1133346172794398, guid: 00d309869f886b946a58c40e684c49b0, type: 2}
   Spawn_Delay: 2
---- !u!114 &1787859135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1787859132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de3f40102f5749c498926bfa63e5f8b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Move_Speed: 0
+  Max_Enemys: 4
+  Counter_Enemys: 0
