@@ -5,7 +5,7 @@ using UnityEngine;
 public class Shoot : MonoBehaviour {
     public GameObject Shoot_Object;
     public float Shoot_Delay;
-    public GameObject Shoot_Point;
+    public GameObject[] Shoot_Point;
 
     bool Shoot_Break = false;
     bool Shoot_Delay_Finished = false;
@@ -28,10 +28,13 @@ public class Shoot : MonoBehaviour {
 
     private void Erzeuge_Shot()
     {
-        Vector3 vec3 = Shoot_Point.transform.position;
+        foreach (GameObject curent in Shoot_Point)
+        {
+            Vector3 vec3 = curent.transform.position;
 
-        //Vector3 End_Vec3 = Camera.main.ScreenToViewportPoint(vec3);
-        Instantiate(Shoot_Object, vec3, Quaternion.identity);
+            //Vector3 End_Vec3 = Camera.main.ScreenToViewportPoint(vec3);
+            Instantiate(Shoot_Object, vec3, Quaternion.identity);
+        }
     }
 
    IEnumerator Start_Delay()

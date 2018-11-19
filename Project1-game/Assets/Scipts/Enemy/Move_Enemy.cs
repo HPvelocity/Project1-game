@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move_Enemy : MonoBehaviour {
+public class Move_Enemy : MonoBehaviour
+{
     private GameObject Main_Player;
     public float Move_Speed;
     public int Distance_To_Player_DownUp;
     public float Distance_To_Player_LeftRight;
     public float Move_Delay = 1;
+
+    bool Move_Stop = false;
 
     struct Where_Is_Player
     {
@@ -18,20 +21,22 @@ public class Move_Enemy : MonoBehaviour {
     Rigidbody2D rig_From_Enemy;
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         rig_From_Enemy = this.GetComponent<Rigidbody2D>();
         Main_Player = GameObject.FindGameObjectWithTag("Player");
     }
-	
-	// Update is called once per frame
-	void Update () {
 
+    // Update is called once per frame
+    void Update()
+    {
         if (MainPlayer_Far())
         {
-            if (Player_Is_There.Player_Down)
+            if (Player_Is_There.Player_Down && !Move_Stop)
             {
                 Move_Down();
-            }else if (Player_Is_There.Player_Up)
+            }
+            else if (Player_Is_There.Player_Up)
             {
                 Move_Up();
             }
@@ -39,12 +44,14 @@ public class Move_Enemy : MonoBehaviour {
             if (Player_Is_There.Player_Right)
             {
                 Move_Right();
-            }else if (Player_Is_There.Player_Left)
+            }
+            else if (Player_Is_There.Player_Left)
             {
                 Move_Left();
             }
         }
-	}
+
+    }
 
     private void Move_Right()
     {
@@ -82,7 +89,7 @@ public class Move_Enemy : MonoBehaviour {
     {
         bool Player_Far = false;
 
-        if (this.transform.position.y - Distance_To_Player_DownUp >  Main_Player.transform.position.y)
+        if (this.transform.position.y - Distance_To_Player_DownUp > Main_Player.transform.position.y)
         {
             Player_Is_There.Player_Down = true;
             Player_Far = true;
@@ -123,4 +130,14 @@ public class Move_Enemy : MonoBehaviour {
         return Player_Far;
     }
 
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Move_Stop = true;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        Move_Stop = false;
+    }
 }
