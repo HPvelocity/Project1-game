@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4d6652314c273d4daad18263d997cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Shoot_Object: {fileID: 1763902923971562, guid: fd965258b3033ed4bb30e9ce193a4e88,
+  Shoot_Object: {fileID: 1296049881989844, guid: 64f5697f51648cb479a7a7cecbbbaf0b,
     type: 2}
   Shoot_Delay: 1
   Shoot_Point:
