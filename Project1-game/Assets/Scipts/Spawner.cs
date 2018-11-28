@@ -5,6 +5,10 @@ using UnityEngine;
 public class Spawner : MonoBehaviour {
     public GameObject[] Prefap_PreBuild;
     public float Spawn_Delay;
+    public int Max_Enemys = 10;
+
+    [HideInInspector]
+    public int Counter_Enemys = 0;
 
     private int Screen_Height;
     private int Screen_Width;
@@ -22,6 +26,12 @@ public class Spawner : MonoBehaviour {
 
     void Spawn_Enemy()
     {
+        if (Counter_Enemys == Max_Enemys)
+        {
+            Spawn_Stop = true;
+            return;
+        }
+
         int random_Position_x = Random.Range(0,Screen_Width);
         int random_Prefab = Random.Range(0,Prefap_PreBuild.Length);
 
@@ -33,7 +43,7 @@ public class Spawner : MonoBehaviour {
         Vector3 prefab_EndPosition = Camera.main.ScreenToWorldPoint(prefab_Position);
         prefab_EndPosition.z = 0;
         Instantiate(Prefap_PreBuild[random_Prefab],prefab_EndPosition,Quaternion.identity);
-
+        Counter_Enemys++;
     }
 
     void Spawn_Start()
